@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="parrot1" class="org.example.Parrot"/>
+    <bean id="parrot2" class="org.example.Parrot"/>
+    <bean id="cat" class="org.example.Cat"/>
+    <bean id="dog" class="org.example.Dog"/>
+    <bean id="human" class="org.example.Human">
+        <constructor-arg>
+            <list>
+                <ref bean="parrot1"/>
+                <ref bean="parrot2"/>
+            </list>
+        </constructor-arg>
+        <constructor-arg ref="cat"/>
+        <constructor-arg ref="dog"/>
+    </bean>
+
+</beans>
